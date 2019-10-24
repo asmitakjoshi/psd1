@@ -1,0 +1,359 @@
+@import 'variable';
+
+body {
+    margin: 0;
+}
+
+h1 {
+    font-family: $font-primary;
+    font-size: calc(30px + (70 - 30) * ((100vw - 300px) / (1600 - 300)));
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+h6 {
+    font-weight: 500;
+    line-height: 1.8;
+    color: #464646;
+    font-size: calc(13px + (16 - 13) * ((100vw - 300px) / (1600 - 300)));
+}
+
+p {
+    font-family: $font-secondary;
+    letter-spacing: 1px;
+    font-size: 14px;
+    color: #333333;
+}
+
+a {
+    color: #333333;
+}
+
+section,
+footer {
+    padding: calc(40px + (80 - 40) * ((100vw - 300px) / (1600 - 300))) 0;
+}
+
+.bg-skylight {
+    background: #f8faff;
+}
+
+.btn-default {
+    border: 1px solid $secondary;
+    font-family: $font-secondary;
+    width: 200px;
+    border-radius: 0;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: $font-secondary;
+    text-transform: uppercase;
+}
+
+.logo {
+    width: 50px;
+    fill: white;
+    padding-right: 15px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.waves {
+    position: relative;
+    width: 100%;
+    height: 25vh;
+    margin-bottom: -7px;
+    min-height: 100px;
+    max-height: 150px;
+}
+
+.content {
+    position: relative;
+    height: 20vh;
+    text-align: center;
+    background-color: white;
+}
+
+/* Animation */
+
+.parallax>use {
+    animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+}
+
+.parallax>use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+
+.parallax>use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+
+.parallax>use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+
+.parallax>use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+}
+
+@media (max-width: 768px) {
+    .waves {
+        height: 40px;
+        min-height: 40px;
+    }
+
+    .content {
+        height: 30vh;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
+
+.navbar {
+    .navbar-brand {
+        font-family: 'Mitr', sans-serif;
+        font-size: calc(30px + (40 - 30) * ((100vw - 300px) / (1600 - 300)));
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-right: 30px;
+    }
+}
+
+.navbar {
+    &.darkHeader {
+        background-color: #333;
+    }
+
+    .navbar-nav {
+        .nav-item {
+            padding: 0 5px;
+
+            .nav-link {
+                // padding: 4px 16px;
+                text-transform: capitalize;
+                opacity: 1;
+
+                color: $secondary;
+
+                &:hover,
+                &:focus,
+                &.active {
+                    background-color: $secondary;
+                    color: $black;
+                    box-shadow: 0px 15px 50px 0px rgba(255, 194, 87, 0.44);
+                }
+            }
+        }
+    }
+
+    .dropdown {
+
+        .btn-secondary,
+        .btn-secondary:focus {
+            color: $secondary;
+            background-color: transparent !important;
+            border-color: transparent !important;
+            box-shadow: none;
+        }
+
+    }
+}
+
+.dropdown {
+
+    .btn-secondary,
+    .btn-secondary:focus {
+        color: $secondary !important;
+        background-color: transparent !important;
+        border: 1px solid $secondary;
+        border-radius: 0;
+        width: 200px;
+        box-shadow: none;
+        font-size: 16px;
+        font-weight: 500;
+        font-family: $font-secondary;
+        text-transform: uppercase;
+    }
+
+    .dropdown-menu {
+        background-color: $secondary;
+        border: 1px solid rgba(255, 255, 255, .4);
+        width: 200px;
+
+        .dropdown-item {
+            color: white;
+            font-size: calc(12px + (14 - 12) * ((100vw - 300px) / (1600 - 300)));
+            text-transform: capitalize;
+
+            &:focus,
+            &:hover {
+                background-color: #464646;
+                color: $secondary;
+            }
+        }
+    }
+}
+
+.shoes-sec {
+    position: relative;
+    // background-image: url(../images/bg-slider.png);
+    background-size: cover;
+    background-position: right bottom;
+    height: 100vh;
+
+    .container-fluid {
+        position: relative;
+        z-index: 5;
+    }
+
+    .center-content {
+        height: calc(100vh - 110px);
+    }
+
+    .slider-sec {
+        margin-top: 110px;
+        display: flex;
+        flex-direction: column;
+
+        .title-text {
+            margin-bottom: 50px;
+        }
+
+        .price {
+            margin-top: auto;
+            margin-bottom: 30px;
+            padding-left: 30px;
+
+            h2 {
+                font-family: $font-primary;
+                font-size: 45px;
+                font-weight: 400;
+                text-align: center;
+                color: $secondary;
+                margin-bottom: -4px;
+            }
+
+            .color-animated {
+                text-align: center;
+                font-weight: 700;
+                font-size: 130%;
+            }
+        }
+    }
+
+    .color-animated {
+        -webkit-animation: color-change 1s infinite;
+        animation: color-change 2s infinite;
+        color: #000;
+    }
+
+    @keyframes color-change {
+        0% {
+            color: $gray
+        }
+
+        50% {
+            color: $secondary;
+        }
+
+        100% {
+            color: $gray
+        }
+    }
+
+    .product-slider {
+        z-index: 3;
+        position: relative;
+
+        &:focus {
+            outline: none !important;
+        }
+
+        img {
+            &:focus {
+                outline: none !important;
+            }
+        }
+    }
+
+    .slider-for {
+        animation: updown infinite 2s ease-in;
+
+    }
+
+    @keyframes updown {
+        0% {
+            top: 0;
+        }
+
+        25% {
+            top: 5px;
+        }
+
+        50% {
+            top: 10px;
+        }
+
+        75% {
+            top: 10px;
+        }
+
+        80% {
+            top: 5px;
+        }
+
+        100% {
+            top: 0;
+        }
+    }
+
+    .wave-sec {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 25%;
+    }
+
+    .slider-nav {
+        .nav-img {
+            height: 70px;
+            width: 70px;
+            border: 1px solid gray;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            margin: auto;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+
+        .slick-track {
+            transform: unset !important;
+        }
+
+        .slick-slide {
+            width: 100% !important;
+
+            &:focus {
+                outline: none !important;
+            }
+        }
+    }
+}
